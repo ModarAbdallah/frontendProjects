@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-info" href="#"><i class="bi bi-journal-code me-2"></i> Mozart Blog </a>
+        </div>
+    </nav>
+
+    <header class="py-5 bg-dark text-white text-center position-relative overflow-hidden hero-blog">
+        <div class="container position-relative z-index-2 py-4">
+            <span class="badge bg-info text-dark mb-3 px-3 py-2 rounded-pill fw-bold">مقالة الأسبوع</span>
+            <h1 class="display-5 fw-bold mb-3">دليلك الشامل لهندسة الحوسبة السحابية وDevOps</h1>
+            <p class="lead text-muted max-w-700 mx-auto mb-4">استكشاف المبادئ الأساسية لنشر التطبيقات القابلة للتوسع باستخدام أطر عمل AWS و Docker و Kubernetes.</p>
+            <button class="btn btn-info btn-md px-4 fw-bold" onclick="openArticleModal(0)">اقرأ الملخص</button>
+        </div>
+    </header>
+
+<main class="container py-5">
+        <div class="d-flex justify-content-center gap-2 mb-5 flex-wrap">
+            <button class="btn btn-primary filter-btn active" data-category="all">الكل</button>
+            <button class="btn btn-outline-primary filter-btn" data-category="frontend">واجهات أمامية</button>
+            <button class="btn btn-outline-primary filter-btn" data-category="backend">أنظمة خلفية</button>
+            <button class="btn btn-outline-primary filter-btn" data-category="devops">سحابة وبنية تحتية</button>
+        </div>
+
+        <div class="row g-4" id="articles-container">
+        </div>
+    </main>
+
+    <div class="modal fade" id="articleModal" tabindex="-1" aria-labelledby="articleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg">
+                <div class="modal-header border-0 bg-light p-4">
+                    <h4 class="modal-title fw-bold" id="modalTitle">عنوان المقال</h4>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="d-flex gap-3 text-muted small mb-4">
+                        <span><i class="bi bi-calendar3"></i> <span id="modalDate">التاريخ</span></span>
+                        <span><i class="bi bi-tag"></i> <span id="modalCategory">التصنيف</span></span>
+                    </div>
+                    <div id="modalContent" class="text-secondary lh-lg fs-5">
+                        محتوى المقال التفصيلي...
+                    </div>
+                </div>
+                <div class="modal-footer border-0 p-3">
+                    <button type="button" class="btn btn-secondary px-4" data-bs-dismiss="modal">إغلاق</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

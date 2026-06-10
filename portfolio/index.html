@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modar Abdullah Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="light-mode">
+    <nav class="navbar navbar-expand-lg sticky-top shadow-sm transition-all">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="#">Modar Abdullah</a>
+            <button id="theme-toggle" class="btn btn-outline-secondary btn-sm rounded-pill">
+                <i class="bi bi-moon-stars-fill" id="theme-icon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <header class="hero-section py-5 d-flex align-items-center">
+        <div class="container text-center py-4">
+            <div class="position-relative d-inline-block mb-4">
+                <div class="profile-avatar-bg"></div>
+                <img src="./images/myPicture.png" alt="Modar" class="rounded-circle profile-img shadow">
+            </div>
+            <h1 class="display-4 fw-bold mb-3">Modar Abdallah</h1>
+            <h3 class="text-muted fw-semibold mb-4"><span class="typing-text"></span></h3>
+            <p class="lead text-secondary max-w-600 mx-auto mb-5">
+               An Software engineer specializing in building integrated, 
+               secure, and scalable web applications using the latest software technologies.
+            </p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="mailto:modarabdallah630@gmail.com" class="btn btn-primary btn-lg px-4 shadow-sm">contact <i class="bi bi-envelope-fill ms-1"></i></a>
+                <a href="#projects" class="btn btn-outline-primary btn-lg px-4">Show Projects <i class="bi bi-arrow-down ms-1"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <section id="projects" class="py-5 bg-light-accent">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-gradient mb-2">Top engineering projects</h2>
+                <p class="text-muted">Examples of my recent work in web development and interactive systems</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm project-card">
+                        <div class="card-body p-4 d-flex flex-column">
+                            <div class="project-icon bg-primary-soft text-primary mb-3">
+                                <i class="bi bi-cpu-fill fs-3"></i>
+                            </div>
+                            <h5 class="card-title fw-bold mb-2">Vortex Admin Dashboard</h5>
+                            <p class="card-text text-secondary mb-4">An integrated system for managing electronic markets and advanced software control panels with high efficiency and speed.</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <span class="badge bg-primary-soft text-primary rounded-pill px-3">Django & React</span>
+                                <a href="https://github.com/ModarAbdallah/Vortex" target="_blank" class="text-primary link-arrow">Details <i class="bi bi-chevron-left"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 shadow-sm project-card">
+                            <div class="card-body p-4 d-flex flex-column">
+                                <div class="project-icon bg-success-soft text-success mb-3 d-flex align-items-center justify-content-center">
+                                    <img src="./images/myIcon.jpg" class="rounded-circle" style="width: 32px; height: 32px; object-fit: cover;" alt="transport"/>
+                                </div>
+                                <h5 class="card-title fw-bold mb-2">Transport Map</h5>
+                                <p class="card-text text-secondary mb-4">A pioneering project in maps and search with facilities for locating parking areas, their routes, and their designated parking spaces.</p>
+                                <div class="mt-auto d-flex justify-content-between align-items-center">
+                                    <span class="badge bg-primary-soft text-primary rounded-pill px-3">Django & React</span>
+                                    <a href="https://github.com/ModarAbdallah/Transport_Map_Project" target="_blank" class="text-primary link-arrow">Details <i class="bi bi-chevron-left"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm project-card">
+                        <div class="card-body p-4 d-flex flex-column">
+                            <div class="project-icon bg-info-soft text-info mb-3">
+                                <i class="bi bi-bar-chart-line-fill fs-3"></i>
+                            </div>
+                            <h5 class="card-title fw-bold mb-2">Crime Analytics Platform</h5>
+                            <p class="card-text text-secondary mb-4">An advanced system for processing big data and implementing
+                                machine learning models for statistical prediction and classification of crime rates.</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <span class="badge bg-primary-soft text-primary rounded-pill px-3">Django & React</span>
+                                <a href="https://github.com/ModarAbdallah/Transport_Map_Project" target="_blank" class="text-primary link-arrow">Details <i class="bi bi-chevron-left"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="py-5 text-center">
+        <div class="container">
+            <h4 class="fw-bold mb-4">Let's build something amazing together</h4>
+            
+            <div class="d-flex justify-content-center gap-3 mb-4">
+                <a href="https://www.facebook.com/ModarAbdallah" target="_blank" rel="noopener noreferrer" class="social-link btn btn-outline-primary rounded-circle" title="Facebook">
+                    <i class="bi bi-facebook"></i>
+                </a>
+                
+                <a href="https://t.me/@M_O_D_A_R30" target="_blank" rel="noopener noreferrer" class="social-link btn btn-outline-info rounded-circle" title="Telegram">
+                    <i class="bi bi-telegram"></i>
+                </a>
+                
+                <a href="https://github.com/ModarAbdallah" target="_blank" rel="noopener noreferrer" class="social-link btn btn-outline-dark rounded-circle" title="GitHub">
+                    <i class="bi bi-github"></i>
+                </a>
+                
+                <a href="mailto:modarabdallah630@gmail.com" class="social-link btn btn-outline-danger rounded-circle" title="Email">
+                    <i class="bi bi-envelope-fill"></i>
+                </a>
+            </div>
+
+            <div class="mb-4">
+                <a href="./files/MyCV.pdf" target="_blank" class="btn btn-primary px-4 py-2 rounded-pill shadow-sm">
+                    <i class="bi bi-file-earmark-pdf-fill me-2"></i> Browse The CV
+                </a>
+            </div>
+            
+            <p class="text-muted small mb-0">جميع الحقوق محفوظة &copy; 2026 | مضر عبد الله</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

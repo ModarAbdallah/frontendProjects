@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latakia Collegiate Programming Contest 2026 Teams Registration</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-form">
+
+    <div class="container py-5 form-container">
+        <form id="registration-form" onsubmit="handleFormSubmit(event)">
+            
+        <div class="card form-card border-0 mb-3 top-accent">
+            <div class="card-body p-4">
+                <h1 class="form-title fs-3 fw-bold mb-3" dir="ltr" style="text-align: left;">Latakia Collegiate Programming Contest 2026 Teams Registration</h1>
+                
+                <div class="account-info d-flex flex-column mb-3 py-2 border-bottom">
+                    <span class="text-secondary fw-semibold">
+                        <span id="current-email">modarabdallah630@gmail.com</span> 
+                        <a href="#" class="text-decoration-none ms-2" data-bs-toggle="modal" data-bs-target="#accountModal">تبديل الحساب</a>
+                    </span>
+                    <span class="text-muted small mt-1"><i class="bi bi-cloud-check me-1"></i> غير مشترك</span>
+                </div>
+
+                <p class="text-danger mb-0 small">* تشير إلى أنّ السؤال مطلوب</p>
+            </div>
+        </div>
+
+        <div class="modal fade" id="accountModal" tabindex="-1" aria-labelledby="accountModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content border-0 shadow" style="border-radius: 8px;">
+                    <div class="modal-header border-0 bg-light">
+                        <h5 class="modal-title fw-bold fs-6 text-secondary" id="accountModalLabel">اختر حساباً للمتابعة</h5>
+                        <button type="button" class="btn-close m-0 ms-auto" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body p-0">
+                        <div class="list-group list-group-flush" id="accounts-list">
+                            </div>
+                    </div>
+                    <div class="modal-footer border-0 bg-light py-2">
+                        <button type="button" class="btn btn-sm btn-outline-secondary" onclick="addNewAccountPrompt()">إضافة حساب جديد</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <div class="card form-card border-0 mb-3">
+                <div class="card-body p-4">
+                    <label for="teamName" class="form-label fs-6 mb-3">Team Name (اسم الفريق بالانكليزي)</label>
+                    <input type="text" class="form-control form-input" id="teamName" placeholder="إجابتك">
+                </div>
+            </div>
+
+            <div class="card form-card border-0 mb-3">
+                <div class="card-body p-4">
+                    <label for="coachName" class="form-label fs-6 mb-3">Coach Name (اسم المدرب بالعربي اوالانكليزي اذا موجود)</label>
+                    <input type="text" class="form-control form-input" id="coachName" placeholder="إجابتك">
+                </div>
+            </div>
+
+            <div class="card form-card border-0 mb-3">
+                <div class="card-body p-4">
+                    <label for="firstMemberAr" class="form-label fs-6 mb-3">اسم اول عضو بالفريق بالعربي <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control form-input" id="firstMemberAr" placeholder="إجابتك" required>
+                </div>
+            </div>
+
+            <div class="card form-card border-0 mb-3">
+                <div class="card-body p-4">
+                    <label for="firstMemberEn" class="form-label fs-6 mb-3">First member name in English (اسم اول عضو بالانكليزي) <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control form-input" id="firstMemberEn" placeholder="إجابتك" required>
+                </div>
+            </div>
+
+            <div class="card form-card border-0 mb-3">
+                <div class="card-body p-4">
+                    <label for="firstMemberEmail" class="form-label fs-6 mb-3">First member ICPC registered Email (icpc ايميل اول عضو اللي مسجل فيه عموقع) <span class="text-danger">*</span></label>
+                    <input type="email" class="form-control form-input" id="firstMemberEmail" placeholder="إجابتك" required>
+                </div>
+            </div>
+
+            <div class="card form-card border-0 mb-3">
+                <div class="card-body p-4">
+                    <label for="firstMemberCF" class="form-label fs-6 mb-3">First member codeforces handle (اسم اول عضو عكودفورسز)</label>
+                    <input type="text" class="form-control form-input" id="firstMemberCF" placeholder="إجابتك">
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center mb-4 px-2">
+                <button type="submit" class="btn btn-primary btn-submit px-4 py-2 fw-semibold">إرسال</button>
+                <button type="button" class="btn btn-link text-decoration-none text-muted btn-clear" onclick="clearForm()">محو النموذج</button>
+            </div>
+
+            <div class="form-footer text-center mt-4">
+                <p class="text-muted small mb-1">عدم إرسال كلمات المرور عبر نماذج Google مطلقًا.</p>
+                <p class="text-muted small mb-3">لم يتم إنشاء هذا المحتوى ولا اعتماده من قِبل Google. <a href="#" class="text-decoration-none text-secondary">الإبلاغ عن إساءة الاستخدام</a> - <a href="#" class="text-decoration-none text-secondary">شروط الخدمة</a> - <a href="#" class="text-decoration-none text-secondary">سياسة الخصوصية</a></p>
+                <h5 class="fw-bold text-secondary fs-5 opacity-75">Google Forms</h5>
+            </div>
+
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+</body>
+</html>

@@ -1,0 +1,117 @@
+:root {
+    --bg-color: #fafbfc;
+    --text-color: #212529;
+    --card-bg: #ffffff;
+    --navbar-bg: rgba(250, 251, 252, 0.85);
+    --primary-soft: #e3f2fd;
+    --success-soft: #e8f5e9;
+    --info-soft: #e0f7fa;
+}
+
+.dark-mode {
+    --bg-color: #121214;
+    --text-color: #f8f9fa;
+    --card-bg: #1e1e24;
+    --navbar-bg: rgba(18, 18, 20, 0.85);
+    --primary-soft: #1a237e;
+    --success-soft: #1b5e20;
+    --info-soft: #006064;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar {
+    background-color: var(--navbar-bg);
+    backdrop-filter: blur(10px);
+}
+
+.bg-light-accent {
+    background-color: var(--card-bg);
+    opacity: 0.97;
+}
+
+.max-w-600 {
+    max-width: 600px;
+}
+
+.profile-img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    z-index: 2;
+    position: relative;
+    border: 4px solid var(--card-bg);
+}
+
+.profile-avatar-bg {
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(45deg, #0d6efd, #0dcaf0);
+    border-radius: 50%;
+    z-index: 1;
+    filter: blur(4px);
+}
+
+.project-card {
+    background-color: var(--card-bg);
+    border: 1px solid rgba(0,0,0,0.05) !important;
+    border-radius: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dark-mode .project-card {
+    border: 1px solid rgba(255,255,255,0.05) !important;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08) !important;
+}
+
+.project-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg-primary-soft { background-color: var(--primary-soft); }
+.bg-success-soft { background-color: var(--success-soft); }
+.bg-info-soft { background-color: var(--info-soft); }
+
+.social-link {
+    width: 45px;
+    height: 45px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.social-link:hover {
+    transform: scale(1.1);
+}
+
+.link-arrow {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+.link-arrow i {
+    transition: transform 0.2s;
+    display: inline-block;
+}
+.link-arrow:hover i {
+    transform: translateX(-4px);
+}

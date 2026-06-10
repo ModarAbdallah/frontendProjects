@@ -1,0 +1,95 @@
+body.bg-form {
+    background-color: #f0ebf8; 
+    font-family: 'Cairo', sans-serif;
+    color: #202124;
+}
+
+.form-container {
+    max-width: 770px;
+}
+
+.form-card {
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    background-color: #fff;
+}
+
+.top-accent {
+    border-top: 10px solid #673ab7 !important;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.form-title {
+    font-family: 'Inter', 'Cairo', sans-serif;
+}
+
+.form-input {
+    border: none;
+    border-bottom: 1px solid #d1d5db;
+    border-radius: 0;
+    padding: 8px 0;
+    font-size: 0.95rem;
+    box-shadow: none !important;
+    background-color: transparent;
+    transition: border-bottom-color 0.2s ease;
+}
+
+.form-input:focus {
+    border-bottom: 2px solid #673ab7;
+    background-color: transparent;
+}
+
+.form-input::placeholder {
+    color: #9ca3af;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.form-input:focus::placeholder {
+    opacity: 1;
+}
+
+.form-label {
+    font-weight: 500;
+    color: #202124;
+    line-height: 1.5;
+}
+
+.btn-submit {
+    background-color: #673ab7;
+    border-color: #673ab7;
+    border-radius: 4px;
+}
+
+.btn-submit:hover, .btn-submit:focus {
+    background-color: #5e35b1;
+    border-color: #5e35b1;
+    box-shadow: 0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15);
+}
+
+.btn-clear {
+    color: #5f6368 !important;
+    font-weight: 500;
+}
+
+.btn-clear:hover {
+    background-color: rgba(95,99,104,0.039);
+    border-radius: 4px;
+}
+
+.account-item {
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    padding: 12px 20px;
+}
+
+.account-item:hover {
+    background-color: #f8f9fa;
+}
+
+.account-item.active {
+    background-color: #f3e8ff !important;
+    color: #673ab7 !important;
+}
