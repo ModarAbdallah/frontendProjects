@@ -47,6 +47,48 @@ function renderProducts() {
     });
 }
 
+// Function to handle adding new products from Seller Panel
+function handleSellerSubmit(event) {
+    event.preventDefault(); // Prevent standard page reload
+    
+    // Extract input fields
+    const title = document.getElementById("prod-title").value;
+    const desc = document.getElementById("prod-desc").value;
+    const price = parseInt(document.getElementById("prod-price").value);
+    const badgeText = document.getElementById("prod-badge").value.trim();
+    const imgUrl = document.getElementById("prod-img").value;
+
+    // Build the new product structure
+    const newProduct = {
+        id: productsData.length + 1,
+        title: title,
+        desc: desc,
+        price: price,
+        badge: badgeText.toUpperCase(),
+        badgeBg: badgeText ? "bg-dark text-white" : "", // Assign dark theme for custom badges
+        img: imgUrl
+    };
+
+    // Add to static database array
+    productsData.unshift(newProduct); // unshift adds it to the beginning of the list
+
+    // Refresh UI Market Grid
+    renderProducts();
+
+    // Reset Form Fields
+    document.getElementById("seller-product-form").reset();
+
+    // Dismiss Bootstrap Modal Programmatically
+    const modalElement = document.getElementById('sellerModal');
+    const modalInstance = bootstrap.Modal.getInstance(modalElement);
+    if (modalInstance) {
+        modalInstance.hide();
+    }
+
+    // Trigger Success Notification Banner
+    showToast(`"${title}" has been added to the marketplace!`, "bg-success");
+}
+
 // Balance checking implementation
 function addToCartSystem(title, price) {
     const currentCartTotal = calculateCartTotal();
@@ -87,7 +129,7 @@ function updateCartUI() {
         listContainer.innerHTML = `<p class="text-muted text-center py-5">Your cart is currently empty.</p>`;
         badge.classList.add("d-none");
         badge.innerText = "0";
-        totalDisplay.innerText = "0 SAR";
+        totalDisplay.innerText = "0 SYP"; // Corrected display unit stability from SAR to SYP
         return;
     }
 

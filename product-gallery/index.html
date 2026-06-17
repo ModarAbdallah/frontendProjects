@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products Gallery</title>
+    <title>Products Gallery & Seller Market</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -11,13 +11,19 @@
 </head>
 <body class="bg-smooth">
 
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
         <div class="container">
             <a class="navbar-brand fw-bold text-primary" href="#">
                 <i class="bi bi-bag-heart-fill me-2"></i>Vortex Store
             </a>
             
-            <div class="d-flex align-items-center gap-3">
+            <div class="d-flex align-items-center gap-2 flex-wrap">
+                <!-- Seller Panel Button -->
+                <button class="btn btn-outline-secondary rounded-pill px-3" data-bs-toggle="modal" data-bs-target="#sellerModal">
+                    <i class="bi bi-shop me-1"></i> Seller Panel
+                </button>
+
                 <div class="wallet-badge d-flex align-items-center bg-light px-3 py-2 rounded-pill border">
                     <i class="bi bi-wallet2 text-success me-2"></i>
                     <span class="text-muted small me-1">Balance:</span>
@@ -33,14 +39,63 @@
         </div>
     </nav>
 
+    <!-- Main Content -->
     <div class="container py-5">
         <h2 class="fw-bold mb-2 text-center text-dark">Featured Products</h2>
         <p class="text-muted text-center mb-5">Please review your available wallet balance before adding items to the cart.</p>
         
         <div class="row g-4" id="products-grid">
-            </div>
+            <!-- Products will be injected here dynamically -->
+        </div>
     </div>
 
+    <!-- Seller Modal (Add Product Form) -->
+    <div class="modal fade" id="sellerModal" tabindex="-1" aria-labelledby="sellerModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header bg-light">
+                    <h5 class="modal-title fw-bold text-dark" id="sellerModalLabel">
+                        <i class="bi bi-plus-circle-fill text-primary me-2"></i>List a New Product
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="seller-product-form" onsubmit="handleSellerSubmit(event)">
+                        <div class="mb-3">
+                            <label for="prod-title" class="form-label small fw-bold text-muted">Product Title</label>
+                            <input type="text" class="form-gradient form-control rounded-3" id="prod-title" placeholder="e.g., Wireless Headphones" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="prod-desc" class="form-label small fw-bold text-muted">Description</label>
+                            <textarea class="form-gradient form-control rounded-3" id="prod-desc" rows="3" placeholder="Describe your product key features..." required></textarea>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="prod-price" class="form-label small fw-bold text-muted">Price (SYP)</label>
+                                <input type="number" class="form-gradient form-control rounded-3" id="prod-price" min="1" placeholder="500" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="prod-badge" class="form-label small fw-bold text-muted">Badge (Optional)</label>
+                                <input type="text" class="form-gradient form-control rounded-3" id="prod-badge" placeholder="e.g., NEW, 20% OFF">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="prod-img" class="form-label small fw-bold text-muted">Product Image URL</label>
+                            <input type="url" class="form-gradient form-control rounded-3" id="prod-img" placeholder="https://example.com/image.jpg" required>
+                            <div class="form-text text-muted small">Provide a direct image link (e.g., from Unsplash).</div>
+                        </div>
+                        <div class="mt-4">
+                            <button type="submit" class="btn btn-primary w-100 py-2.5 rounded-pill fw-bold">
+                                <i class="bi bi-cloud-arrow-up-fill me-1"></i> Publish Product to Market
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Drawer (Offcanvas) -->
     <div class="offcanvas offcanvas-end" tabindex="-1" id="cartDrawer" aria-labelledby="cartDrawerLabel">
         <div class="offcanvas-header bg-light">
             <h5 class="offcanvas-title fw-bold" id="cartDrawerLabel">
@@ -65,11 +120,11 @@
         </div>
     </div>
 
+    <!-- Toast Notifications -->
     <div class="toast-container position-fixed bottom-0 end-0 p-3">
         <div id="cartToast" class="toast align-items-center text-white border-0" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="d-flex">
-                <div id="toast-message-body" class="toast-body">
-                    </div>
+                <div id="toast-message-body" class="toast-body"></div>
                 <button type="button" class="btn-close btn-close-white me-auto m-2" data-bs-dismiss="toast" aria-label="Close"></button>
             </div>
         </div>
